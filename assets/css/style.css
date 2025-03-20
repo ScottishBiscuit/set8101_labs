@@ -59,3 +59,67 @@ nav {
     border-radius: 8px;
     border: 3px solid #d6bba1;
 }
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #f3e5d0;
+    border: 2px solid #d6bba1;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Slide Images */
+.slide img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Slide Text Descriptions */
+.slide p {
+    background-color: #e6d5c7;
+    padding: 10px;
+    margin: 0;
+    border-radius: 0 0 8px 8px;
+    font-weight: bold;
+}
+
+/* Navigation Arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    color: #5a4f4f;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    user-select: none;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Slide Animation */
+.fade {
+    animation: fade 1s ease-in-out;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}

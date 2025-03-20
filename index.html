@@ -30,11 +30,27 @@
             </ul>
         </section>
 
-        <section class="gallery">
+        <section class="slideshow">
             <h2>Snake Over the Years</h2>
-            <img src="assets/images/googlesnake.png" alt="Google Snake">
-            <img src="assets/images/snake-io-cover.avif" alt="Snake IO">
-            <img src="assets/images/SnakeGreenAppleGrid.png" alt="Web Version of Snake">
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <img src="assets/images/googlesnake.png" alt="Google Snake">
+                    <p>Google Snake - A fun, modernized version available in Google Search.</p>
+                </div>
+        
+                <div class="slide fade">
+                    <img src="assets/images/snake-io-cover.avif" alt="Snake IO">
+                    <p>Snake IO - A competitive multiplayer Snake experience.</p>
+                </div>
+        
+                <div class="slide fade">
+                    <img src="assets/images/SnakeGreenAppleGrid.png" alt="Web Version of Snake">
+                    <p>Web Version - A classic snake experience playable in browsers.</p>
+                </div>
+        
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
         </section>
         
 
@@ -51,6 +67,31 @@
         </section>
     </main>
 </div> <!-- Closing container from styles sheet.-->
+
+<script>
+    let slideIndex = 0;
+
+    function showSlides(n) {
+        const slides = document.getElementsByClassName("slide");
+        
+        if (n >= slides.length) { slideIndex = 0; }
+        if (n < 0) { slideIndex = slides.length - 1; }
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slides[slideIndex].style.display = "block";
+    }
+
+    function changeSlide(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Auto-display first slide
+    document.addEventListener('DOMContentLoaded', () => showSlides(slideIndex));
+</script>
+
 
 </body>
 </html>
