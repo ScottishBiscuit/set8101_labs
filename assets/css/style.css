@@ -66,8 +66,7 @@ nav a:hover {
 
 .gallery img,
 .media img {
-    width: 200px;
-    height: auto;
+    object-fit: contain;
     border-radius: 8px;
     border: 3px solid #d6bba1;
 }
