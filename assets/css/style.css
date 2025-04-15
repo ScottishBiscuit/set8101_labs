@@ -84,12 +84,14 @@ nav a:hover {
     text-align: center;
 }
 
-/* Slide Images */
 .slide img {
-    width: 100%;        /* Ensures responsiveness */
-    max-height: 300px;  /* Limits height to maintain consistent size */
-    object-fit: cover;  /* Crops oversized images to fill the same space */
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
     border-radius: 8px;
+    background-color: #fff;
+    display: block;
+    margin: 0 auto;
 }
 
 /* Slide Text Descriptions */
