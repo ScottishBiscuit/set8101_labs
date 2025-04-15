@@ -108,35 +108,12 @@
 
         <section class="play-snake">
             <h2>Try it Yourself!</h2>
-            <a href="snakegame.html" class="play-button">Play Snake</a>
+            <div class="button-container">
+                <a href="snakegame.html" class="play-button">Play Snake</a>
+            </div>
         </section>
     </main>
 </div> <!-- Closing container from styles sheet.-->
-
-<script>
-    let slideIndex = 0;
-
-    function showSlides(n) {
-        const slides = document.getElementsByClassName("slide");
-        
-        if (n >= slides.length) { slideIndex = 0; }
-        if (n < 0) { slideIndex = slides.length - 1; }
-
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-
-        slides[slideIndex].style.display = "block";
-    }
-
-    function changeSlide(n) {
-        showSlides(slideIndex += n);
-    }
-
-    // Auto-display first slide
-    document.addEventListener('DOMContentLoaded', () => showSlides(slideIndex));
-</script>
-
-
+<script src="assets/javascript/slideshow.js"></script>
 </body>
 </html>

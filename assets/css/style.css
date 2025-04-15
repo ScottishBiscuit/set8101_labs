@@ -18,7 +18,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Body Background */
+/* Body background */
 body {
     background-color: #f8ebe0;
     margin: 0;
@@ -29,7 +29,7 @@ body {
     min-height: 100vh;
 }
 
-/* Text Styling Improvements */
+/* Text styling improvements */
 h1, h2 {
     text-align: center;
 }
@@ -55,7 +55,7 @@ nav a:hover {
     color: #a07c67;
 }
 
-/* Image and Media Centering */
+/* Image and media centering */
 .gallery,
 .media {
     display: flex;
@@ -71,7 +71,7 @@ nav a:hover {
     border: 3px solid #d6bba1;
 }
 
-/* Slideshow Container */
+/* Slideshow container */
 .slideshow-container {
     position: relative;
     max-width: 500px;
@@ -94,7 +94,7 @@ nav a:hover {
     margin: 0 auto;
 }
 
-/* Slide Text Descriptions */
+/* Slide text descriptions */
 .slide p {
     background-color: #e6d5c7;
     padding: 10px;
@@ -103,7 +103,7 @@ nav a:hover {
     font-weight: bold;
 }
 
-/* Navigation Arrows - Larger and Positioned Outside */
+/* Navigation arrows - larger and positioned outside */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -130,7 +130,7 @@ nav a:hover {
     right: -60px; /* Moves button further outside */
 }
 
-/* Hover Effect for Arrows */
+/* Hover effect for the arrows */
 .prev:hover, .next:hover {
     background-color: #5a4f4f;
 }
@@ -187,4 +187,79 @@ nav a:hover {
     height: 100%;
     border-radius: 8px;
     border: 3px solid #d6bba1;
+}
+/* Timeline section layout */
+/* Applies a soft background, border, padding, and drop shadow to both sections */
+.intro,
+.timeline {
+    background-color: #f3e5d0;
+    border: 2px solid #d6bba1;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    color: #5a4f4f; /* Soft brown text for readability */
+}
+
+/* Headings inside sections */
+.intro h2,
+.timeline h2 {
+    font-size: 1.6rem;
+    color: #4b3f3f;       /* Darker brown for contrast */
+    margin-bottom: 15px;  /* Space below each heading */
+}
+
+/* Intro paragraph styling to make it easier to read */
+.intro p {
+    text-align: justify; /* Even text edges on both sides */
+    margin-bottom: 15px; 
+    line-height: 1.8;
+}
+
+/* Timeline list styling to add structure and spacing to the bullet points */
+.timeline ul {
+    padding-left: 20px; /* Indents the bullet points */
+    margin-top: 10px; /* Space above the list */
+}
+
+.timeline li {
+    margin-bottom: 12px; /* Space between each timeline item */
+    font-size: 1rem;  
+    line-height: 1.6;
+}
+
+/* Timeline emphasis to highlight the bolded years in the timeline by making them darker */
+.timeline li b {
+    color: #3f2e2e;
+}
+
+/* Center the Play Button */
+.play-snake {
+    text-align: center;
+    margin: 40px auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Button Style */
+.play-button {
+    display: inline-block;
+    background-color: #a07c67;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.play-button:hover {
+    background-color: #5a4f4f;
+    transform: translateY(-2px);
 }
