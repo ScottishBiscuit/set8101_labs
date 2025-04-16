@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Play Snake</title>
+    <link rel="stylesheet" href="assets/css/snakegame.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Snake</h1>
+        </header>
+
+        <!-- Main Layout -->
+        <main class="snake-layout">
+            <!-- Left Column -  how to play -->
+            <aside class="game-info">
+                <h2>How to Play</h2>
+                
+                <p>
+                    Use the arrow keys or WASD to control the snake.
+                </p>
+                
+                <p>
+                    Eat the food to grow longer and score points.
+                </p>
+                
+                <p>
+                    Avoid hitting the walls or eating yourself!
+                </p>
+            </aside>
+
+            <!-- Center column - The snake game -->
+            <section class="game-container">
+                <canvas id="snakeCanvas" width="400" height="400"></canvas>
+            </section>
+
+            <!-- Right column - links to the other games -->
+            <aside class="other-games">
+                <h2>Other Games</h2>
+                <ul>
+                    <li><a href="https://40674741.github.io/set08101/">Higher or Lower</a></li><!-- Link to Finlays game-->
+                    <li><a href="https://jgreensmith.github.io/">Mini DnD</a></li> <!-- Link to James's game-->
+                </ul>
+            </aside>
+        </main>
+
+        <!-- Footer with the buttons to the other sites -->
+        <footer class="snake-footer">
+            <a href="https://40620093.github.io/SET08101/" class="footer-button">Return to Homepage</a><!-- Link to Keirs homepage-->
+            <a href="index.html" class="footer-button">Return to History</a>
+        </footer>
+    </div>
+
+    <script src="assets/javascript/snake.js"></script>
+</body>
+</html>

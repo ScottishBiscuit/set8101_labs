@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdf3e7;
+    color: #5a4f4f;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* The header */
+header {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+/* Main layout: 3 panels */
+.snake-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* left panel */
+.game-info {
+    background-color: #f3e5d0;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #d6bba1;
+}
+
+/* middle panel */
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff3e0;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #d6bba1;
+}
+
+/* right panel */
+.other-games {
+    background-color: #f3e5d0;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #d6bba1;
+}
+
+.other-games ul {
+    list-style: none;
+    padding: 0;
+}
+
+.other-games a {
+    text-decoration: none;
+    color: #5a4f4f;
+}
+
+.other-games a:hover {
+    color: #a07c67;
+}
+
+/* the footer */
+.snake-footer {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.footer-button {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #a07c67;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.footer-button:hover {
+    background-color: #5a4f4f;
+}
