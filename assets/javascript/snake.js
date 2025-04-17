@@ -6,7 +6,6 @@ const ctx = canvas.getContext("2d");
 const box = 20;
 const rows = Math.floor(canvas.width / box);
 
-
 // Snake starting position
 let snake = [{ x: 5, y: 5 }];
 let direction = "RIGHT";
@@ -48,39 +47,52 @@ function drawGame() {
     if (direction === "RIGHT") head.x += 1;
 
     // handles if the snake hits the wall
-    if (
-        head.x < 0 || head.y < 0 ||
-        head.x >= rows || head.y >= rows
-    ) {
+if (
+    head.x < 0 || head.y < 0 ||
+    head.x >= rows || head.y >= rows
+) {
+    playTryAgainSound();
+    alert("Game Over!");
+    snake = [{ x: 5, y: 5 }];
+    direction = "RIGHT";
+    return;
+}
+
+// handles when the snake hits itself
+for (let part of snake) {
+    if (part.x === head.x && part.y === head.y) {
+        playTryAgainSound();
         alert("Game Over!");
         snake = [{ x: 5, y: 5 }];
         direction = "RIGHT";
         return;
     }
+}
 
-    // handles when the snake hits itself
-    for (let part of snake) {
-        if (part.x === head.x && part.y === head.y) {
-            alert("Game Over!");
-            snake = [{ x: 5, y: 5 }];
-            direction = "RIGHT";
-            return;
-        }
-    }
-
-    // function for eating the food
     if (head.x === food.x && head.y === food.y) {
-        food = {
-            x: Math.floor(Math.random() * rows),
-            y: Math.floor(Math.random() * rows)
-        };
-    } else {
-        snake.pop();
-    }
-
+    playMunchSound(); // 🔊 play the munch sound
+    food = {
+        x: Math.floor(Math.random() * rows),
+        y: Math.floor(Math.random() * rows)
+    };
+} else {
+    snake.pop();
+}
     snake.unshift(head);
 
     // Draw food
     ctx.fillStyle = "red";
     ctx.fillRect(food.x * box, food.y * box, box, box);
 }
+function playTryAgainSound() {
+    const sound = new Audio("assets/audio/tryagain.mp3");
+    sound.currentTime = 0;
+    sound.play().catch(e => console.warn("Sound blocked:", e));
+}
+
+function playMunchSound() {
+    const munchSound = new Audio("assets/audio/munch.mp3");
+    console.log("🍎 Playing munch sound:", munchSound.src);
+    munchSound.play().catch(e => console.warn("⚠️ Munch sound blocked by browser:", e));
+}
+
