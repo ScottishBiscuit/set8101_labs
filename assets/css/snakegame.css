@@ -87,3 +87,8 @@ header {
 .footer-button:hover {
     background-color: #5a4f4f;
 }
+
+/* border for snake canvas */
+#snakeCanvas {
+    border: 2px dashed red;
+  }
