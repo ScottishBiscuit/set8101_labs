@@ -10,13 +10,13 @@ const rows = Math.floor(canvas.width / box);
 let snake = [{ x: 5, y: 5 }];
 let direction = "RIGHT";
 
-// Placing the first food
+//Randomly places the first food
 let food = {
     x: Math.floor(Math.random() * rows),
     y: Math.floor(Math.random() * rows)
 };
 
-// Handles the keyboard input
+// Waits for input from user to give the snake a direcction
 document.addEventListener("keydown", (event) => {
     if (event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
     if (event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
@@ -28,17 +28,17 @@ document.addEventListener("keydown", (event) => {
 setInterval(drawGame, 100);
 
 function drawGame() {
-    // Clears the canvas
+    // Clears the previous frame
     ctx.fillStyle = "#fdf3e7";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Draws the snake
+    // Draws each part of the snake
     ctx.fillStyle = "green";
     snake.forEach((part) => {
         ctx.fillRect(part.x * box, part.y * box, box, box);
     });
 
-    // Moves the snake
+    // Moves the snake by creating a new head and checkin the direction
     const head = { ...snake[0] };
 
     if (direction === "UP") head.y -= 1;
@@ -51,48 +51,49 @@ if (
     head.x < 0 || head.y < 0 ||
     head.x >= rows || head.y >= rows
 ) {
-    playTryAgainSound();
+    playTryAgainSound(); // Plays the try again sound if hits wall
     alert("Game Over!");
-    snake = [{ x: 5, y: 5 }];
-    direction = "RIGHT";
+    snake = [{ x: 5, y: 5 }]; // Resets the snake
+    direction = "RIGHT"; // Gives it a direction on restart
     return;
 }
 
 // handles when the snake hits itself
 for (let part of snake) {
     if (part.x === head.x && part.y === head.y) {
-        playTryAgainSound();
+        playTryAgainSound(); // plays the death sound
         alert("Game Over!");
-        snake = [{ x: 5, y: 5 }];
-        direction = "RIGHT";
+        snake = [{ x: 5, y: 5 }]; // Resets the snake
+        direction = "RIGHT"; // Resets the snake and gives it a direction on restart
         return;
     }
 }
 
+// handles when the snake eats the food
     if (head.x === food.x && head.y === food.y) {
     playMunchSound(); // 🔊 play the munch sound
+    // places a new food at random
     food = {
         x: Math.floor(Math.random() * rows),
         y: Math.floor(Math.random() * rows)
     };
-} else {
+} else { // If no food is eaten, remove the last part of the snake, so it moves forward
     snake.pop();
 }
-    snake.unshift(head);
+    snake.unshift(head); // ads new head to the front of the snake
 
-    // Draw food
+    // Draws the food
     ctx.fillStyle = "red";
     ctx.fillRect(food.x * box, food.y * box, box, box);
 }
-function playTryAgainSound() {
+function playTryAgainSound() { // function that plays when the snake dies
     const sound = new Audio("assets/audio/tryagain.mp3");
     sound.currentTime = 0;
-    sound.play().catch(e => console.warn("Sound blocked:", e));
+    sound.play();
 }
 
-function playMunchSound() {
+function playMunchSound() {// function that plays when the snake eats the food
     const munchSound = new Audio("assets/audio/munch.mp3");
-    console.log("🍎 Playing munch sound:", munchSound.src);
-    munchSound.play().catch(e => console.warn("⚠️ Munch sound blocked by browser:", e));
+    munchSound.play();
 }
 
