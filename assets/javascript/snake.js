@@ -1,4 +1,8 @@
 // Get the canvas and drawing context
+//https://www.youtube.com/watch?v=uyhzCBEGaBY This video provided be freeCodeCamp.org helped me develop the snake game. A lot of code from this video is used in this project.
+// I also used the following website to help me understand how to use the canvas https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes
+//https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
+//https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
 const canvas = document.getElementById("snakeCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -16,7 +20,7 @@ let food = {
     y: Math.floor(Math.random() * rows)
 };
 
-// Waits for input from user to give the snake a direcction
+// Waits for input from user to give the snake a direcction 
 document.addEventListener("keydown", (event) => {
     if (event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
     if (event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
